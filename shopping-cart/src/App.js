@@ -1,26 +1,14 @@
-import React, { useState, useCallback } from "react";
+import Cart from './components/Cart/Cart';
+import Layout from './components/Layout/Layout';
+import Products from './components/Shop/Products';
 
-const Button = React.memo(({ handleClick }: { handleClick: () => void }) => {
-  console.log("Button re-rendered");
-  return <button onClick={handleClick}>Click me</button>;
-});
-
-const App = () => {
-  const [count, setCount] = useState(0);
-  const [multiplier, setMultiplier] = useState(1);
-
-  // Memoized function with dependency
-  const increment = useCallback(() => {
-    setCount((prev) => prev + multiplier);
-  }, [multiplier]); // Function updates when `multiplier` changes
-
+function App() {
   return (
-    <div>
-      <p>Count: {count}</p>
-      <button onClick={() => setMultiplier((m) => m + 1)}>Increase Multiplier</button>
-      <Button handleClick={increment} />
-    </div>
+    <Layout>
+      <Cart />
+      <Products />
+    </Layout>
   );
-};
+}
 
 export default App;
