@@ -1,0 +1,17 @@
+nav {
+}
+.list {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 20px 30px;
+
+  justify-content: center;
+  color: yellow;
+}
+.list a{
+    color: currentColor;
+}
+.active{
+    opacity: .5;
+}
