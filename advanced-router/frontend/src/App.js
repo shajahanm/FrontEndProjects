@@ -5,6 +5,7 @@ import NewEvents from "./pages/NewEvents";
 import EventDetail from "./pages/EventDetail";
 import EditEvent from "./pages/EditEvent";
 import Root from "./pages/Root";
+import EventsRootLayout from "./pages/EventsRootLayout";
 
 // Challenge / Exercise
 
@@ -34,10 +35,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Root />}>
           <Route index element={<Home />} />
-          <Route path="events" element={<Events />} />
-          <Route path="events/new" element={<NewEvents />} />
-          <Route path="events/:eventId" element={<EventDetail />} />
-          <Route path="events/:eventId/edit" element={<EditEvent />} />
+          <Route path="events" element={<EventsRootLayout />}>
+            <Route path="" element={<Events />} />
+            <Route path="new" element={<NewEvents />} />
+            <Route path=":eventId" element={<EventDetail />} />
+            <Route path=":eventId/edit" element={<EditEvent />} />
+          </Route>
         </Route>
       </Routes>
     </Router>
