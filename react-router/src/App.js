@@ -5,8 +5,8 @@ import Layout from "./components/Layout";
 
 function App() {
   return (
-    <Router>
-      <Routes>
+    <Router >
+      <Routes >
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="second" element={<SecondPage />} />
