@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import SecondPage from "./pages/SecondPage";
 import Layout from "./components/Layout";
+import PrintComponent from "./components/PrintComponent";
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
         </Route>
       </Routes>
     </Router>
+    // <>
+    // <PrintComponent />
+    // </>
   );
 }
 

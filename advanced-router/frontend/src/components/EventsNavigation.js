@@ -26,9 +26,6 @@ function EventsNavigation() {
               New Event
             </NavLink>
           </li>
-          {/* <li>
-            <a href="/events/new">New Event</a>
-          </li> */}
         </ul>
       </nav>
     </header>

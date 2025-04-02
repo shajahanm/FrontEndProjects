@@ -6,6 +6,7 @@ import EventDetail from "./pages/EventDetail";
 import EditEvent from "./pages/EditEvent";
 import Root from "./pages/Root";
 import EventsRootLayout from "./pages/EventsRootLayout";
+import PrintComponent from "../../../react-router/src/components/PrintComponent";
 
 // Challenge / Exercise
 
@@ -31,19 +32,22 @@ import EventsRootLayout from "./pages/EventsRootLayout";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Root />}>
-          <Route index element={<Home />} />
-          <Route path="events" element={<EventsRootLayout />}>
-            <Route path="" element={<Events />} />
-            <Route path="new" element={<NewEvents />} />
-            <Route path=":eventId" element={<EventDetail />} />
-            <Route path=":eventId/edit" element={<EditEvent />} />
-          </Route>
-        </Route>
-      </Routes>
-    </Router>
+    // <Router>
+    //   <Routes>
+    //     <Route path="/" element={<Root />}>
+    //       <Route index element={<Home />} />
+    //       <Route path="events" element={<EventsRootLayout />}>
+    //         <Route path="" element={<Events />} />
+    //         <Route path="new" element={<NewEvents />} />
+    //         <Route path=":eventId" element={<EventDetail />} />
+    //         <Route path=":eventId/edit" element={<EditEvent />} />
+    //       </Route>
+    //     </Route>
+    //   </Routes>
+    // </Router>/
+    <>
+    <PrintComponent />
+    </>
   );
 }
 
