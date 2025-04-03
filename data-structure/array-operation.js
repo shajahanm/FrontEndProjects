@@ -21,6 +21,23 @@ const findSecondLargestNumber = (arr) => {
 
   return second === -Infinity ? null : second;
 };
+const quickSort = (arr) => {
+  if (arr.length <= 1) return arr; // Base case
+
+  const pivot = arr[arr.length - 1]; // Choosing last element as pivot
+  const left = []; // Elements smaller than pivot
+  const right = []; // Elements greater than pivot
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] < pivot) {
+      left.push(arr[i]);
+    } else {
+      right.push(arr[i]);
+    }
+  }
+
+  return [...quickSort(left), pivot, ...quickSort(right)];
+};
 
 const sampleArray = [64, 10, 34, 50, 90, 12, 3, 39, 1];
 const largest = findLargest(sampleArray);
@@ -29,3 +46,4 @@ const secondLargest = findSecondLargestNumber(sampleArray);
 console.log(minimum + " " + "Minimum");
 console.log(largest + " " + "Maximum");
 console.log(secondLargest + " " + "Second Largest");
+console.log(quickSort(sampleArray) + " " + "Quick sort");
