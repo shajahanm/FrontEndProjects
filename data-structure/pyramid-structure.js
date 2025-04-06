@@ -10,15 +10,18 @@ function generatePyramid(count, character, direction = "up") {
   if (direction !== "up" && direction !== "down") {
     return console.error("Please choose up or down");
   }
-
-  for (
-    let i = direction === "up" ? 0 : count - 1;
-    i < direction === "up" ? count : count >= 0;
-    direction === "up" ? i++ : i--
-  ) {
-    spaces = " ".repeat(count - i - 1);
-    stars = character.repeat(2 * i + 1);
-    console.log(spaces + stars);
+  if (direction === "up") {
+    for (let i = 0; i < count; i++) {
+      spaces = " ".repeat(count - i - 1);
+      stars = character.repeat(2 * i + 1);
+      console.log(spaces + stars);
+    }
+  } else {
+    for (let i = count - 1; i >= 0; i--) {
+      spaces = " ".repeat(count - i - 1);
+      stars = character.repeat(2 * i + 1);
+      console.log(spaces + stars);
+    }
   }
 }
-generatePyramid(10, "#", "up");
+generatePyramid(10, "#", "down");
