@@ -36,9 +36,11 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+// Creating a new client of react query
 const queryClient = new QueryClient();
 function App() {
   return (
+    // rect query provider
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
     </QueryClientProvider>
