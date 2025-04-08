@@ -19,7 +19,18 @@ Array.prototype.addNumbers = function () {
   for (let i = 0; i < this.length; i++) {
     value = value + this[i];
   }
-  return value
+  return value;
 };
+class Car {
+  constructor(model, brand) {
+    this.model = model;
+    this.brand = brand;
+  }
+  getCarDetails() {
+    return console.log(`Car model is ${this.model} and brand is ${this.brand}`);
+  }
+}
 
 console.log([1, 4, 30, 20, 5].addNumbers());
+const myCar = new Car('Swift 2019 zxi','Maruti suzuki');
+myCar.getCarDetails()
