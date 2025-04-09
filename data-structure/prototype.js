@@ -33,4 +33,4 @@ class Car {
 
 console.log([1, 4, 30, 20, 5].addNumbers());
 const myCar = new Car('Swift 2019 zxi','Maruti suzuki');
-myCar.getCarDetails()
+myCar.getCarDetails();
