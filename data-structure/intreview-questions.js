@@ -54,6 +54,10 @@
 // const youngest = minBy(people, (person) => person.age);
 // console.log(youngest);
 
+// 3.selection sort
+/*
+selection sort is an algorithm used for sorting an array
+*/
 function selectionSort(arr) {
   if (!Array.isArray && arr.length === 0) return undefined;
   const arrayLength = arr.length;
