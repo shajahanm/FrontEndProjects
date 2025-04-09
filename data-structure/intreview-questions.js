@@ -29,27 +29,45 @@
 
 /* 2.Implement a function minBy(array, iteratee) that finds the element inside array with the minimum value after going through iteratee.*/
 
-function minBy(array, iteratee) {
-  if (!Array.isArray(array) && array.length === 0) {
-    return undefined;
-  }
-  let minEl = array[0];
-  let minValue = iteratee(minEl);
-  for (let i = 0; i < array.length; i++) {
-    const currentValue = iteratee(array[i]);
-    if (currentValue < minValue) {
-      minValue = currentValue;
-      minEl = array[i];
+// function minBy(array, iteratee) {
+//   if (!Array.isArray(array) && array.length === 0) {
+//     return undefined;
+//   }
+//   let minEl = array[0];
+//   let minValue = iteratee(minEl);
+//   for (let i = 0; i < array.length; i++) {
+//     const currentValue = iteratee(array[i]);
+//     if (currentValue < minValue) {
+//       minValue = currentValue;
+//       minEl = array[i];
+//     }
+//   }
+//   return minEl;
+// }
+
+// const people = [
+//   { name: "Alice", age: 32 },
+//   { name: "Bob", age: 24 },
+//   { name: "Charlie", age: 29 },
+// ];
+
+// const youngest = minBy(people, (person) => person.age);
+// console.log(youngest);
+
+function selectionSort(arr) {
+  if (!Array.isArray && arr.length === 0) return undefined;
+  const arrayLength = arr.length;
+  for (let i = 0; i < arrayLength; i++) {
+    let minIndex = i;
+    for (let j = i + 1; j < arrayLength; j++) {
+      if (arr[j] < arr[minIndex]) {
+        minIndex = j;
+      }
+    }
+    if (minIndex !== i) {
+      [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
     }
   }
-  return minEl;
+  return arr;
 }
-
-const people = [
-  { name: "Alice", age: 32 },
-  { name: "Bob", age: 24 },
-  { name: "Charlie", age: 29 },
-];
-
-const youngest = minBy(people, (person) => person.age);
-console.log(youngest);
+console.log(selectionSort([5, 3, 6, 2, 10])); // [2, 3, 5, 6, 10]
