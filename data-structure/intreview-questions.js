@@ -96,26 +96,39 @@ it first take the first element as initial value and then check whether it it th
 
 // 5.array .reduce
 
-Array.prototype.myReduce = function (callback, initialValue) {
-  if (!Array.isArray(this) && this.length === 0)
-    throw new TypeError("Not an array");
-  if (typeof callback !== "function")
-    throw new TypeError("Callback must br function");
+// Array.prototype.myReduce = function (callback, initialValue) {
+//   if (!Array.isArray(this) && this.length === 0)
+//     throw new TypeError("Not an array");
+//   if (typeof callback !== "function")
+//     throw new TypeError("Callback must br function");
 
-  const array = this;
-  let accumulator = initialValue;
-  let startIndex = 0;
-  if (accumulator === undefined) {
-    if (array.length === 0) {
-      throw new TypeError("Reduce of empty array with no initial value");
+//   const array = this;
+//   let accumulator = initialValue;
+//   let startIndex = 0;
+//   if (accumulator === undefined) {
+//     if (array.length === 0) {
+//       throw new TypeError("Reduce of empty array with no initial value");
+//     }
+//     accumulator = array[0];
+//     startIndex = 1;
+//   }
+//   for (let i = 0; i < array.length; i++) {
+//     accumulator = callback(accumulator, array[i], i, array);
+//   }
+//   return accumulator;
+// };
+
+// console.log([10,5,9].myReduce((prev, curr) => prev + curr, 0)); // 6
+
+function flatten(arr) {
+  const result = [];
+  for (const item of arr) {
+    if (Array.isArray(item)) {
+      result.push(...flatten(item)); 
+    } else {
+      result.push(item); 
     }
-    accumulator = array[0];
-    startIndex = 1;
   }
-  for (let i = 0; i < array.length; i++) {
-    accumulator = callback(accumulator, array[i], i, array);
-  }
-  return accumulator;
-};
-
-console.log([10,5,9].myReduce((prev, curr) => prev + curr, 0)); // 6
+  return result;
+}
+console.log(flatten([1, 30, [39, 90, 30],[[10, 39, 40], [12, 39]]]));
