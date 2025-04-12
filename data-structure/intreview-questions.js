@@ -58,38 +58,63 @@
 /*
 selection sort is an algorithm used for sorting an array
 it first take the first element as initial value and then check whether it it the latest value or not if it is not the min value then swap and continue the process
-*/
-function selectionSort(arr) {
-  if (!Array.isArray && arr.length === 0) return undefined;
-  const arrayLength = arr.length;
-  for (let i = 0; i < arrayLength; i++) {
-    let minIndex = i;
-    for (let j = i + 1; j < arrayLength; j++) {
-      if (arr[j] < arr[minIndex]) {
-        minIndex = j;
-      }
+// */
+// function selectionSort(arr) {
+//   if (!Array.isArray && arr.length === 0) return undefined;
+//   const arrayLength = arr.length;
+//   for (let i = 0; i < arrayLength; i++) {
+//     let minIndex = i;
+//     for (let j = i + 1; j < arrayLength; j++) {
+//       if (arr[j] < arr[minIndex]) {
+//         minIndex = j;
+//       }
+//     }
+//     if (minIndex !== i) {
+//       [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
+//     }
+//   }
+//   return arr;
+// }
+// console.log(selectionSort([5, 3, 6, 2, 10])); // [2, 3, 5, 6, 10]
+
+// // 4. debounce function
+// function debounce(fun, wait) {
+//   let timerId;
+//   return function (...args) {
+//     clearTimeout(timerId);
+//     timerId = setTimeout(() => {
+//       fun.apply(this, args);
+//     }, wait);
+//   };
+// }
+
+// function handleResize() {
+//   console.log("Resized!");
+// }
+
+// window.addEventListener("resize", debounce(handleResize, 300));
+
+// 5.array .reduce
+
+Array.prototype.myReduce = function (callback, initialValue) {
+  if (!Array.isArray(this) && this.length === 0)
+    throw new TypeError("Not an array");
+  if (typeof callback !== "function")
+    throw new TypeError("Callback must br function");
+
+  const array = this;
+  let accumulator = initialValue;
+  let startIndex = 0;
+  if (accumulator === undefined) {
+    if (array.length === 0) {
+      throw new TypeError("Reduce of empty array with no initial value");
     }
-    if (minIndex !== i) {
-      [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
-    }
+    accumulator = array[0];
+    startIndex = 1;
   }
-  return arr;
-}
-console.log(selectionSort([5, 3, 6, 2, 10])); // [2, 3, 5, 6, 10]
+  for (let i = 0; i < array.length; i++) {
+    accumulator = callback(accumulator, array[i], i, array);
+  }
+};
 
-// 4. debounce function
-function debounce(fun, wait) {
-  let timerId;
-  return function (...args) {
-    clearTimeout(timerId);
-    timerId = setTimeout(() => {
-      fun.apply(this, args);
-    }, wait);
-  };
-}
-
-function handleResize() {
-  console.log("Resized!");
-}
-
-window.addEventListener("resize", debounce(handleResize, 300));
+[1, 2, 3].myReduce((prev, curr) => prev + curr, 0); // 6
