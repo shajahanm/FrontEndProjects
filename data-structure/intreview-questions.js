@@ -115,6 +115,7 @@ Array.prototype.myReduce = function (callback, initialValue) {
   for (let i = 0; i < array.length; i++) {
     accumulator = callback(accumulator, array[i], i, array);
   }
+  return accumulator;
 };
 
-[1, 2, 3].myReduce((prev, curr) => prev + curr, 0); // 6
+console.log([10,5,9].myReduce((prev, curr) => prev + curr, 0)); // 6
