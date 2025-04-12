@@ -57,6 +57,7 @@
 // 3.selection sort
 /*
 selection sort is an algorithm used for sorting an array
+it first take the first element as initial value and then check whether it it the latest value or not if it is not the min value then swap and continue the process
 */
 function selectionSort(arr) {
   if (!Array.isArray && arr.length === 0) return undefined;
@@ -75,3 +76,20 @@ function selectionSort(arr) {
   return arr;
 }
 console.log(selectionSort([5, 3, 6, 2, 10])); // [2, 3, 5, 6, 10]
+
+// 4. debounce function
+function debounce(fun, wait) {
+  let timerId;
+  return function (...args) {
+    clearTimeout(timerId);
+    timerId = setTimeout(() => {
+      fun.apply(this, args);
+    }, wait);
+  };
+}
+
+function handleResize() {
+  console.log("Resized!");
+}
+
+window.addEventListener("resize", debounce(handleResize, 300));
