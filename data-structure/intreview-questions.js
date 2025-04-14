@@ -124,13 +124,26 @@ it first take the first element as initial value and then check whether it it th
 //   const result = [];
 //   for (const item of arr) {
 //     if (Array.isArray(item)) {
-//       result.push(...flatten(item)); 
+//       result.push(...flatten(item));
 //     } else {
-//       result.push(item); 
+//       result.push(item);
 //     }
 //   }
 //   return result;
 // }
 // console.log(flatten([1, 30, [39, 90, 30],[[10, 39, 40], [12, 39]]]));
 
-console.log(0.1 + 0.2 == 0.3);
+/* question : what is the output of this*/ console.log(0.1 + 0.2 == 0.3);
+/*answer: false because the floating point is 0.1 means 0.10000000 also the 0.2 deffres in the floating */
+
+function add(a, b) {
+  // handling case with parameters only
+  if (b !== undefined) {
+    return a + b;
+  }
+  return function (c) {
+    return a + c;
+  };
+}
+add(2, 5); // 7
+add(2)(5); // 7
