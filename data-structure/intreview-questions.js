@@ -178,3 +178,17 @@ four
 three
 two
 */
+
+function foo1() {
+  return {
+    bar: "hello",
+  };
+}
+
+function foo2() {
+  return;
+  {
+    bar: "hello";
+  }
+}
+//when the first function called it wil return {bar:"hello"} for second it will return undefined beause the bracket opened in the next lin so js automatically add semicolon in the return statement
