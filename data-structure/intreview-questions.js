@@ -120,15 +120,17 @@ it first take the first element as initial value and then check whether it it th
 
 // console.log([10,5,9].myReduce((prev, curr) => prev + curr, 0)); // 6
 
-function flatten(arr) {
-  const result = [];
-  for (const item of arr) {
-    if (Array.isArray(item)) {
-      result.push(...flatten(item)); 
-    } else {
-      result.push(item); 
-    }
-  }
-  return result;
-}
-console.log(flatten([1, 30, [39, 90, 30],[[10, 39, 40], [12, 39]]]));
+// function flatten(arr) {
+//   const result = [];
+//   for (const item of arr) {
+//     if (Array.isArray(item)) {
+//       result.push(...flatten(item)); 
+//     } else {
+//       result.push(item); 
+//     }
+//   }
+//   return result;
+// }
+// console.log(flatten([1, 30, [39, 90, 30],[[10, 39, 40], [12, 39]]]));
+
+console.log(0.1 + 0.2 == 0.3);
