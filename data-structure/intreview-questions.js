@@ -136,17 +136,45 @@ it first take the first element as initial value and then check whether it it th
 /* question : what is the output of this*/ console.log(0.1 + 0.2 == 0.3);
 /*answer: false because the floating point is 0.1 means 0.10000000 also the 0.2 deffres in the floating */
 
-function add(a, b) {
-  // handling case with parameters only
-  if (b !== undefined) {
-    return a + b;
-  }
-  return function (c) {
-    return a + c;
-  };
-}
-add(2, 5); // 7
-add(2)(5); // 7
+// function add(a, b) {
+//   // handling case with parameters only
+//   if (b !== undefined) {
+//     return a + b;
+//   }
+//   return function (c) {
+//     return a + c;
+//   };
+// }
+// add(2, 5); // 7
+// add(2)(5); // 7
 
-console.log("i'm a lasagna hog".split("").reverse().join(""));;
-const value = 'goh angasal a im'
+// console.log("i'm a lasagna hog".split("").reverse().join(""));;
+// const value = 'goh angasal a im'
+
+// var foo = "Hello";
+// (function() {
+//   var bar = " World";
+//   alert(foo + bar);
+// })();
+// alert(foo + bar);
+
+// var foo = {n: 1};
+// var bar = foo;
+// foo.x = foo = {n: 2};
+
+//  What does the following code print?
+console.log("one");
+setTimeout(function () {
+  console.log("two");
+}, 0);
+Promise.resolve().then(function () {
+  console.log("three");
+});
+console.log("four");
+
+/*
+one 
+four
+three
+two
+*/
