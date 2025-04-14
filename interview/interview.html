@@ -4,10 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+        
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .questions-wrap{
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+            max-width: 1200px;
+            padding: 20px;
+            margin: 0 auto;
+        }
+        .questions-wrap>li{
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 10px 16px;
+            border: 1px solid #d4d4d4;
+            box-shadow: 0px 2px 0 rgba(0, 0, 0, .16);
+        }
+        
+    </style>
   </head>
   <body>
     <div>
-      <ul>
+      <ul class="questions-wrap">
         <li>
           <p class="question">What is React?</p>
           <p class="answer">
@@ -38,6 +65,12 @@
             <p class="answer">The shadow dom browser concept primarily used for scoping variables and css in web and the virtual dom is a concept made up on js on top of browser apis </p>
 
         </li>
+        <li>
+            <p class="question">
+            What are controlled components?
+        </p>
+        <p class="anser">You have full control over the input then it is called controlled component/the state of the input field is updated or handled by the react itself then its called the uncontrolled</p>
+    </li>
       </ul>
     </div>
   </body>
