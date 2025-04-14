@@ -147,3 +147,6 @@ function add(a, b) {
 }
 add(2, 5); // 7
 add(2)(5); // 7
+
+console.log("i'm a lasagna hog".split("").reverse().join(""));;
+const value = 'goh angasal a im'
