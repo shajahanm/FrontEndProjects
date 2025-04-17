@@ -5,31 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        .questions-wrap{
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            list-style: none;
-            padding: 0;
-            max-width: 1200px;
-            padding: 20px;
-            margin: 0 auto;
-        }
-        .questions-wrap>li{
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 10px 16px;
-            border: 1px solid #d4d4d4;
-            box-shadow: 0px 2px 0 rgba(0, 0, 0, .16);
-        }
-        
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .questions-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 1200px;
+        padding: 20px;
+        margin: 0 auto;
+      }
+
+      .questions-wrap > li {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 10px 16px;
+        border: 1px solid #d4d4d4;
+        box-shadow: 0px 2px 0 rgba(0, 0, 0, 0.16);
+      }
+
+      .question {
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+
+      .answer ol {
+        padding-left: 20px;
+      }
     </style>
   </head>
   <body>
@@ -38,39 +44,57 @@
         <li>
           <p class="question">What is React?</p>
           <p class="answer">
-            React is a javascript library used to create single page application
+            React is a JavaScript library used to create single-page
+            applications.
           </p>
         </li>
         <li>
           <p class="question">What are the major features of React?</p>
-          <p class="answer">
+          <div class="answer">
             <ol>
-                <li>Uses a Jsx syntax in order to allow user to write html in js</li>
-                <li>It uses virtual dom instead of real dom in order to improve performance</li>
-                <li>It allow users to create reusable components</li>
+              <li>Uses a JSX syntax to allow writing HTML in JS</li>
+              <li>
+                Uses Virtual DOM instead of real DOM for better performance
+              </li>
+              <li>Allows creation of reusable components</li>
             </ol>
+          </div>
+        </li>
+        <li>
+          <p class="question">How does Virtual DOM work?</p>
+          <p class="answer">
+            Whenever a value changes, the entire UI component is re-rendered in
+            the Virtual DOM. Then the difference between the previous and the
+            new Virtual DOM is calculated. After that, only the changed values
+            are updated in the real DOM.
           </p>
         </li>
         <li>
-            <p class="question">How Virtual DOM works?
-            </p>
-            <p class="answer">
-                When ever a underlying value is changed the entire UI component will be re rendered in virtual dom.
-                Now th deference between the previous one and the new virtual dom is calculated,when the calculation is done then the real dom will be updated with only the changed values
-            </p>
+          <p class="question">
+            What is the difference between Shadow DOM and Virtual DOM?
+          </p>
+          <p class="answer">
+            Shadow DOM is a browser feature used for scoping variables and CSS
+            in web components, while Virtual DOM is a concept implemented in
+            JavaScript libraries like React to optimize DOM updates.
+          </p>
         </li>
         <li>
-            <p class="question">What is the difference between Shadow DOM and Virtual DOM?
-            </p>
-            <p class="answer">The shadow dom browser concept primarily used for scoping variables and css in web and the virtual dom is a concept made up on js on top of browser apis </p>
-
+          <p class="question">What are controlled components?</p>
+          <p class="answer">
+            Controlled components are form inputs that are controlled by React.
+            The state of the input is managed by the component's state, making
+            it easy to access and manipulate input values.
+          </p>
         </li>
         <li>
-            <p class="question">
-            What are controlled components?
-        </p>
-        <p class="anser">You have full control over the input then it is called controlled component/the state of the input field is updated or handled by the react itself then its called the uncontrolled</p>
-    </li>
+          <p class="question">What is HTML?</p>
+          <p class="answer">
+            HTML (HyperText Markup Language) is the standard language used to
+            create and structure content on the web. It defines elements like
+            headings, paragraphs, links, and more.
+          </p>
+        </li>
       </ul>
     </div>
   </body>
