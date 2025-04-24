@@ -1,0 +1,25 @@
+.input {
+  min-height: 40px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d4d4d4;
+  min-width: 250px;
+}
+.input:focus {
+  outline: none;
+  border: 1px solid var(--primary-action-color);
+}
+.error {
+  color: "red";
+  font-size: 12px;
+  margin-top: 4px;
+  display: "block";
+}
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputContainer:focus-within .label {
+  color: var(--primary-action-color);
+}
