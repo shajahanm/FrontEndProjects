@@ -6,7 +6,6 @@ type CustomModalProps = {
   isOpen: boolean;
   onClose: () => void;
   children: React.ReactNode;
-  title?: string;
   width?: string;
   height?: string;
 };
@@ -15,7 +14,6 @@ export const CustomModal: React.FC<CustomModalProps> = ({
   isOpen,
   onClose,
   children,
-  title,
   width = '500px',
   height = 'auto',
 }) => {
@@ -41,12 +39,6 @@ export const CustomModal: React.FC<CustomModalProps> = ({
         style={{ width, height }}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="modal-header">
-          {title && <h3>{title}</h3>}
-          <button className="close-btn" onClick={onClose}>
-            &times;
-          </button>
-        </div>
         <div className="modal-body">{children}</div>
       </div>
     </div>,
