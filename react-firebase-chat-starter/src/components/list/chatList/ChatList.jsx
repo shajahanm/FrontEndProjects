@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./chat-list.css";
+import AddUser from "./addUser/AddUser";
 const ChatList = () => {
   const [showUserModal, setUserModal] = useState(false);
   return (
@@ -51,7 +52,7 @@ const ChatList = () => {
           <p>Hello</p>
         </div>
       </div>
-      
+      {showUserModal && <AddUser />}
     </div>
   );
 };
