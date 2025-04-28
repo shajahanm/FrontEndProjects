@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "./chat-list.css";
 const ChatList = () => {
+  const [showUserModal, setUserModal] = useState(false);
   return (
     <div className="chat-list">
       <div className="search">
@@ -8,8 +9,49 @@ const ChatList = () => {
           <img src="./search.png" alt="" />
           <input type="text" placeholder="Search" />
         </div>
-        <img src="./plus.png" alt="" />
+        <img
+          src={showUserModal ? "./minus.png" : "./plus.png"}
+          alt=""
+          className="add"
+          onClick={() => setUserModal((prev) => !prev)}
+        />
       </div>
+      <div className="item">
+        <img src="./avatar.png" alt="" />
+        <div className="texts">
+          <span>John doe</span>
+          <p>Hello</p>
+        </div>
+      </div>
+      <div className="item">
+        <img src="./avatar.png" alt="" />
+        <div className="texts">
+          <span>John doe</span>
+          <p>Hello</p>
+        </div>
+      </div>
+      <div className="item">
+        <img src="./avatar.png" alt="" />
+        <div className="texts">
+          <span>John doe</span>
+          <p>Hello</p>
+        </div>
+      </div>
+      <div className="item">
+        <img src="./avatar.png" alt="" />
+        <div className="texts">
+          <span>John doe</span>
+          <p>Hello</p>
+        </div>
+      </div>
+      <div className="item">
+        <img src="./avatar.png" alt="" />
+        <div className="texts">
+          <span>John doe</span>
+          <p>Hello</p>
+        </div>
+      </div>
+      
     </div>
   );
 };
