@@ -1,5 +1,8 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "./login.css";
+import { toast } from "react-toastify";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../lib/firebase";
 const Login = () => {
   const [avatar, setAvatar] = useState({
     file: null,
@@ -8,7 +11,17 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
 
   const handleLogin = () => {};
-  const handleRegister = () => {};
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const { userName, email, password } = Object.fromEntries(formData);
+    try {
+      const userData = createUserWithEmailAndPassword(auth, email, password);
+    } catch (err) {
+      toast.error("Something went wrong");
+      console.log(err);
+    }
+  };
   const handleAvatar = () => {};
   return (
     <div className="login">
@@ -34,7 +47,7 @@ const Login = () => {
             style={{ display: "none" }}
             onChange={handleAvatar}
           />
-          <input type="text" placeholder="Username" name="username" />
+          <input type="text" placeholder="Username" name="userName" />
           <input type="text" placeholder="Email" name="email" />
           <input type="password" placeholder="Password" name="password" />
           <button disabled={loading}>{loading ? "Loading" : "Sign Up"}</button>
